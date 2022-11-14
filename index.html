@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="https://amp.dev/ru/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <link rel="canonical" href="https://sokomary.github.io/template-landing/">
     <meta name="viewport" content="width=device-width">
     <script type="application/ld+json">
         {
@@ -18,8 +18,503 @@
     </script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <style amp-custom>
+        :root {
+            --default-color: #000000;
+            --accent-color: #ff5170;
+            --primary-color: #00aaff;
+            --secondary-color: #b1bbbf;
+        }
+        .text_size_header {
+            font-size: 48pt;
+        }
+        .text_size_regular {
+            font-size: 16pt;
+        }
+        .text_size_hint {
+            font-size: 14pt;
+        }
+        .text_weight_bold {
+            font-weight: bolder;
+        }
+        .text_color_accent {
+            color: var(--accent-color);
+        }
+        .text_color_primary {
+            color: var(--primary-color);
+        }
+        .text_color_secondary {
+            color: var(--secondary-color);
+        }
+        button {
+            background-color: #FFFFFF;
+            color: #00aaff;
+            font-size: 14px;
+            font-weight: bolder;
+            height: 51px;
+            width: 229px;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            color: var(--default-color);
+            text-align: center;
+        }
+        header {
+            height: 150px;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 130px;
+        }
+        footer {
+            display: flex;
+            flex-direction: column;
+            gap: 37px;
+            padding-top: 136px;
+        }
+        .footer__img {
+            width: 100%;
+        }
+        .footer__action {
+            padding-top: 100px;
+        }
+        .round-button {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            padding: 21px;
+            cursor: pointer;
+            box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.08);
+        }
+        .header__logo {
+            border-radius: 50%;
+            width: 414px;
+            height: 414px;
+
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.08);
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .header__logo_hidden_half {
+            margin-top: -267px;
+        }
+        .header__logo-text {
+            height: 45%;
+        }
+        .explore-block {
+            padding-top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 37px;
+        }
+        .explore-block__content {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+        .explore-block_header {
+            display: flex;
+            flex-direction: column;
+            gap: 90px;
+            align-items: center;
+        }
+        .explore-block__action {
+            background-color: #FFFFFF;
+            color: #00aaff;
+            font-size: 14px;
+            font-weight: bolder;
+            height: 51px;
+            width: 229px;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .explore-block__action-text {
+            text-decoration: none;
+        }
+        .options-block {
+            width: calc(100% - 500px);
+            padding: 0 250px;
+            display: flex;
+            flex-direction: row;
+            gap: 120px;
+        }
+        .option {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        .box {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .box__text {
+            background-color: #f7f8fa;
+            padding: 0 117px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 55px;
+            text-align: left;
+        }
+        .box__description {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+        .box__img {
+            width: 100%;
+        }
+        .screen {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .screen__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 55px;
+            text-align: left;
+            padding-left: 15px;
+        }
+        .screen__text_right {
+            padding-left: 150px;
+        }
+        .screen__descriprion {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+        .screen__first-img {
+            margin-top: -200px;
+            width: 100%
+        }
+        .screen__second-img {
+            width: 100%
+        }
+        .screen__first-img-container {
+            padding-right: 180px;
+        }
+        .screen__second-img-container {
+            padding-left: 180px;
+        }
+        .john {
+            --ww: 100vw;
+            height: calc(var(--ww)/3*0.92);
+            margin-top: -150px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .john__text {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 55px;
+        }
+        .john__description {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+        }
+        .john__name {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: opacity 200ms ease-in;
+            pointer-events: none;
+        }
+        .modal:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-window {
+            background-color: white;
+            border-radius: 10px;
+            width: 1186px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 200px auto;
+        }
+        .modal-window__logo {
+            height: 363px;
+            width: 363px;
+            background-color: white;
+            border-radius: 50%;
+            margin-top: -182px;
+            box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .modal-window__content {
+            padding: 105px;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-window__go-button {
+            background-color: #ff5170;
+            color: white;
+            font-size: 18pt;
+            height: 95px;
+            width: 290px;
+            border-radius: 5px;
+            margin: 0;
+        }
+        .modal-window__close {
+            width: 95%;
+            margin-top: -150px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .modal-window__close-button {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            padding: 21px;
+            cursor: pointer;
+            box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.08);
+        }
+        .modal-window__close-icon {
+            height: 25px;
+            width: 25px;
+            margin-left: -3px;
+        }
+
+        @media screen and (max-width: 1224px)  {
+            .options-block {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .box {
+                display: flex;
+                flex-direction: column;
+            }
+            .box__text {
+                padding: 100px 0px;
+                align-items: center;
+            }
+            .screen {
+                display: flex;
+                flex-direction: column;
+            }
+            .screen__first-img {
+                margin: 0;
+            }
+            .screen__text {
+                align-items: center;
+                padding: 50px 0px;
+            }
+            .john {
+                margin-top: 200px;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+    </style>
+
 </head>
 <body>
-<h1>Welcome to the mobile web</h1>
+    <header>
+        <div class="round-button">
+            <amp-img src="assets/burger.webp" class="round-button__icon" alt="меню" layout="fixed" height="25" width="25"></amp-img>
+        </div>
+        <div class="header__logo header__logo_hidden_half">
+            <div class="header__logo-text">
+                <div class="text_size_header text_color_primary text_weight_bold">CRIOS</div>
+                <div class="text_color_secondary text_weight_bold">FREE PSD TEMPLATE</div>
+            </div>
+        </div>
+        <div class="round-button">
+            <amp-img src="assets/search.webp" class="round-button__icon" alt="поиск" layout="fixed" height="25" width="25"></amp-img>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="explore-block">
+            <div class="text_size_header text_weight_bold">Simple PSD template with cool stuff</div>
+            <div class="explore-block__content">
+                <div class="explore-block_header">
+                    <div class="text_color_secondary text_weight_bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                    <div class="explore-block__action">
+                        <a href="#openModal" class="explore-block__action-text text_color_primary">EXPLORE TEMPLATE</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="text_color_secondary text_weight_bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                    <div class="text_size_header text_weight_bold">Lorem ipsum dolor sit amet</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="options-block">
+            <div class="option">
+                <amp-img src="assets/firstoption.webp" alt="первая опция" layout="fixed" height="100" width="100"></amp-img>
+                <div class="text_weight_bold">Lorem ipsum dolor sit amet</div>
+                <div class="text_size_hint text_color_secondary">Suspendisse vel leo efficitur,  venenatis est ut, tincidunt nib</div>
+            </div>
+            <div class="option">
+                <amp-img src="assets/secondoption.webp" alt="вторая опция" layout="fixed" height="100" width="100"></amp-img>
+                <div class="text_weight_bold">Lorem ipsum dolor sit amet</div>
+                <div class="text_size_hint text_color_secondary">Suspendisse vel leo efficitur,  venenatis est ut, tincidunt nib</div>
+            </div>
+            <div class="option">
+                <amp-img src="assets/thirdoption.webp" alt="третья опция" layout="fixed" height="100" width="100"></amp-img>
+                <div class="text_weight_bold">Lorem ipsum dolor sit amet</div>
+                <div class="text_size_hint text_color_secondary">Suspendisse vel leo efficitur,  venenatis est ut, tincidunt nib</div>
+            </div>
+            <div class="option">
+                <amp-img src="assets/forthoption.webp" alt="четвертая опция" layout="fixed" height="100" width="100"></amp-img>
+                <div class="text_weight_bold">Lorem ipsum dolor sit amet</div>
+                <div class="text_size_hint text_color_secondary">Suspendisse vel leo efficitur,  venenatis est ut, tincidunt nib</div>
+            </div>
+        </div>
+
+        <div><button>CHECK OUR OFFER</button></div>
+
+        <div>
+            <div class="box">
+                <div class="box__img"><amp-img src="assets/road.webp" alt="дорога" layout="responsive" height="562" width="997"></amp-img></div>
+                <div class="box__text">
+                    <div class="text_size_header">Lorem ipsum dolor</div>
+                    <div class="box__description text_color_secondary text_size_regular">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div>Suspendisse vel leo efficitur, venenatis est ut, tincidunt nibn.</div>
+                        <div> Suspendisse lobortis lectus vel imperdient ullamcorper.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box__text">
+                    <div class="text_size_header">Lorem ipsum dolor</div>
+                    <div class="box__description text_color_secondary text_size_regular">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div>Suspendisse vel leo efficitur, venenatis est ut, tincidunt nibn.</div>
+                        <div> Suspendisse lobortis lectus vel imperdient ullamcorper.</div>
+                    </div>
+                </div>
+                <amp-img src="assets/woods.webp" alt="дрова" layout="responsive" height="562" width="1003"></amp-img>
+            </div>
+        </div>
+
+        <div class="screens">
+            <div class="screen">
+                <div class="screen__first-img-container">
+                    <amp-img src="assets/firstscreen.webp" alt="скриншот" class="screen__first-img" layout="responsive" height="928" width="799"></amp-img>
+                </div>
+                <div class="screen__text">
+                    <div class="text_size_header text_color_primary">Lorem ipsum dolor</div>
+                    <div class="screen__descriprion text_size_regular text_color_secondary">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div>Suspendisse vel leo efficitur, venenatis est ut, tincidunt nibn.</div>
+                        <div> Suspendisse lobortis lectus vel imperdient ullamcorper.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen">
+                <div class="screen__text screen__text_right">
+                    <div class="text_size_header text_color_primary">Lorem ipsum dolor</div>
+                    <div class="screen__descriprion text_size_regular text_color_secondary">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div>Suspendisse vel leo efficitur, venenatis est ut, tincidunt nibn.</div>
+                        <div>Suspendisse lobortis lectus vel imperdient ullamcorper.</div>
+                    </div>
+                </div>
+                <div class="screen__second-img-container">
+                    <amp-img src="assets/secondscreen.webp" alt="скриншот"  class="screen__second-img" layout="responsive" height="1029" width="850"></amp-img>
+                </div>
+            </div>
+        </div>
+
+        <div class="john">
+            <div class="john__text">
+                <div class="text_size_header text_color_accent">Template is awesome</div>
+                <div class="john__description text_size_regular text_color_secondary">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                    <div>Suspendisse vel leo efficitur, venenatis est ut, tincidunt nibn.</div>
+                    <div>Suspendisse lobortis lectus vel imperdient ullamcorper.</div>
+                </div>
+                <div class="john__name text_size_regular">
+                    <div class="text_weight_bold">John Doe</div>
+                    <div class="text_color_secondary">CEO at Crios.com </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="text_color_secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="text_size_header">Lorem ipsum dolor sit amet</div>
+        <div class="footer__action"><button>SYMO.CO/FREEBIES/</button></div>
+        <amp-img src="assets/forest.webp" alt="лес" class="footer__img" layout="responsive" height="1238" width="2000"></amp-img>
+    </footer>
+
+    <div id="openModal" class="modal">
+        <div class="modal-window">
+            <div class="modal-window__logo">
+                <amp-img src="assets/modalicon.webp" alt="лого" layout="intrinsic" height="100" width="100"></amp-img>
+            </div>
+            <div class="modal-window__close">
+                <a class="modal-window__close-button" href="#close" title="Close">
+                    <amp-img src="assets/close.webp" class="modal-window__close-icon" alt="меню" layout="intrinsic" height="100" width="100"></amp-img>
+                </a>
+            </div>
+            <div class="modal-window__content">
+                <div class="text_size_header text_color_accent text_weight_bold">
+                    Thanks for downloading our template!
+                </div>
+                <div class="text_size_regular text_color_secondary">
+                    Hope that you will enjoy it well! Check also our site
+                </div>
+                <button class="modal-window__go-button">www.symu.co</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
